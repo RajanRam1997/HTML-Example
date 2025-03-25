@@ -1,0 +1,174 @@
+package Hibernate;
+//Plain old Java objects POJO
+//Bean
+public class Car {
+	int id;
+	String modelno;
+	String color;
+	float price;
+	
+	public Car() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Car(int id, String modelno, String color, float price) {
+		super();
+		this.id = id;
+		this.modelno = modelno;
+		this.color = color;
+		this.price = price;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getModelno() {
+		return modelno;
+	}
+
+	public void setModelno(String modelno) {
+		this.modelno = modelno;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "Car [id=" + id + ", modelno=" + modelno + ", color=" + color + ", price=" + price + "]";
+	}
+	
+	
+}
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+   <session-factory>
+      <property name = "hibernate.dialect">
+         org.hibernate.dialect.MySQLDialect
+      </property>
+      <property name = "hibernate.connection.driver_class">
+
+         com.mysql.cj.jdbc.Driver
+
+      </property>
+      <!-- Assume test is the database
+name -->
+      <property name = "hibernate.connection.url">
+         jdbc:mysql://localhost:3306/HibernateDB
+      </property>
+      <property name = "hibernate.connection.username">
+         root
+      </property>
+      <property name = "hibernate.connection.password">
+         root
+      </property>
+      <!-- List of XML mapping files
+-->
+
+      <mapping resource = "Car.hbm.xml"/>
+   </session-factory>
+
+</hibernate-configuration>
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+
+"-//Hibernate/Hibernate Mapping DTD//EN"
+
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+ 
+
+<hibernate-mapping>
+
+   <class name = "Car" table = "Cars">
+
+      
+
+      <meta attribute = "class-description">
+
+         This class contains the
+cars object detail. 
+
+      </meta>
+
+      
+
+      <id name = "id" type = "int" column = "id">
+
+         <generator class="assigned"/>
+
+      </id>
+
+      
+
+      <property name = "model" column = "model_name" type = "string"/>
+
+      <property name = "color" column = "car_color" type = "string"/>
+
+      <property name = "prise" column = "car-Price" type = "float"/>
+
+      
+
+   </class>
+
+</hibernate-mapping>
+
+
+
+
+
+
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class main {
+	public static void main(String... args) {
+		try {
+		Configuration config=new Configuration();
+		config.configure("hibernate.cfg.xml");
+		SessionFactory factory=config.buildSessionFactory();
+		Session session=factory.openSession();
+		Car c1=new Car(101,"Nexon","Blue",100000);
+		session.save(c1);
+		System.out.println("Your car object is saved !!");
+		session.close();
+		}
+		catch(Execption e) {
+			System.out.println(e);
+		}
+	}
+}

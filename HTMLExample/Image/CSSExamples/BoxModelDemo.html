@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Demo</title>
+    <style>
+        #d1{
+           margin: 100px 20px 30px 40px;
+           border:10px double blue;
+           padding:50px;
+
+        }
+        #d2{
+            width:100px;
+            height:100px;
+            border-radius: 50px;
+            border-top:10px solid green;
+            border-right:10px solid yellow;
+            border-bottom:10px solid red;
+            border-left:10px solid black
+        }
+        .btn{
+            width:100px;
+            height:20px;
+            border:2px solid;
+            margin:10px;
+            text-align:center;
+            padding: 20px;
+            border-bottom-right-radius: 40px;
+            display: inline-block;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">
+        i am in div
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem consequuntur voluptate suscipit placeat, magnam dignissimos eligendi autem aperiam quaerat voluptatem deserunt eaque, molestias voluptates quo rerum mollitia, ad odit eveniet?
+    </div>
+    <div style="border:20px groove silver">
+        This is Groove
+    </div >
+    <div align="center" id="d2">
+        this is div2
+    </div>
+    <div style="text-align: left;">
+        <div class="btn">Home</div>
+        <div class="btn">About</div>
+        <div class="btn">Gallery</div>
+        <div class="btn">Contact</div>
+        <div class="btn">FeedBack</div>
+    </div>
+</body>
+</html>

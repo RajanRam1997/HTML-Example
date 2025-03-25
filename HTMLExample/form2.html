@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+</head>
+<body bgcolor="orange">
+    <form action="">
+        <table align="center">
+            <h2 align="center"><i>Student Registration Form</i></h2>
+            <p align="center">Fill in this form to register</p>
+            
+            <tr>
+                <br><td><label for="txtname">First Name :</label></td>
+                <td><input  placeholder="Enter Your Name Here" type="text" id="txtname" name="textname" required></td>
+            </tr>
+            <tr>
+                <td><label for="txtlastname">Last Name :</label></td>
+                <td><input  type="text" id="txtlastname" name="txtlastname"></td>
+            </tr>
+            <tr>
+                <td><label for="txtemail">Email :</label></td>
+                <td><input  type="email" id="txtemail" name="textemail"></td>
+            </tr>
+            <tr>
+                <td><label>Date Of Birth :</label></td>
+                <td><input  type="date"></td>
+            </tr>
+            <tr>
+                <td><label type="txtusername">Set Username :</label></td>
+                <td><input  type="text" id="txtusername" name="txtusername"></td>
+            </tr>
+            <tr>
+                <td><label type="txtpassword">Set Password :</label></td>
+                <td><input  type="password" id="txtpassword" name="txtpassword"></td>
+            </tr>
+            <tr>
+                <td><label type="txtgender">Gender :</label></td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="Gender"></td>
+                <td><label type="txtmale">Male</label></td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="Gender"></td>
+                <td><labrl type="txtfemale">Feamle</labrl></td>
+            </tr>
+            <tr>
+                <td><input type="radio" name="Gender"></td>
+                <td><labrl type="txtothers">Others</labrl></td>
+            </tr>
+            <tr>
+                    <td><label type="txtcourse">Course :</label></td>
+                        <td><select><option value="course">Course</option>
+                            <option value="CS">Computer Fundamentals</option>  
+                            <option value="AI">Artificial Intelligence</option> 
+                            <option value="ML">Machine Learning</option>
+                            <option value="OOPS">Object Oriented Programming</option>  
+                            <option value="DBMS">Database Management System</option> 
+                        </select> </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Register"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
